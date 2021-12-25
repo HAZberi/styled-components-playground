@@ -2,7 +2,7 @@ import { Container } from "./styles/Container.styled";
 import { StyledHeader, Nav, Logo, Image } from "./styles/Header.styled";
 import { Button } from "./styles/Button.styled";
 import { Flex } from "./styles/Flex.styled";
-import useWindowDimensions from "../util/getWindowDimensions";
+import useWindowDimensions from "../util/useWindowDimensions";
 export default function Header() {
   const { width } = useWindowDimensions();
   return (
