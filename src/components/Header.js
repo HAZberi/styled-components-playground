@@ -2,7 +2,9 @@ import { Container } from "./styles/Container.styled";
 import { StyledHeader, Nav, Logo, Image } from "./styles/Header.styled";
 import { Button } from "./styles/Button.styled";
 import { Flex } from "./styles/Flex.styled";
+import useWindowDimensions from "../util/getWindowDimensions";
 export default function Header() {
+  const { width } = useWindowDimensions();
   return (
     <StyledHeader>
       <Container>
@@ -18,11 +20,18 @@ export default function Header() {
               but so does you audience. Create connections with your users as
               you engage in genuine discussion.
             </p>
+            {width > 768 ? (
+              <Button bg="#ff0099" color="#fff">
+                Get Started for free
+              </Button>
+            ) : null}
+          </div>
+          <Image src="./images/illustration-mockups.svg" alt="" />
+          {width < 768 ? (
             <Button bg="#ff0099" color="#fff">
               Get Started for free
             </Button>
-          </div>
-          <Image src="./images/illustration-mockups.svg" alt="" />
+          ) : null}
         </Flex>
       </Container>
     </StyledHeader>
